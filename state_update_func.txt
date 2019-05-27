@@ -1,0 +1,2 @@
+(MAIN,B1) -> MAIN_GRID
+(MAIN_GRID,B2) -> MAIN
