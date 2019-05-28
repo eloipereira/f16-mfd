@@ -1,3 +1,5 @@
+import re
+
 class State:
     def __init__(self,name):
         self.name = name
@@ -25,6 +27,42 @@ class Event:
         return self.name != other.name
     def __hash__(self):
         return hash(self.name)
+
+class StateTransition:
+    def __init__(self, stf = {}, from_file = False, filename = None):
+        self.stf = stf
+        if (from_file):
+            is_first = True
+            with open(filename) as fh:
+                for line in fh:
+                    line = line.replace(' ','')
+                    if is_first:
+                        s = re.findall("(\S+)",line)[0]
+                        self.state = State(s)
+                        is_first = False
+                    else:
+                        t = re.findall("\((\S+)\,(\S+)\)->(\S+)",line)[0]
+                        self.stf[(State(t[0]),Event(t[1]))] = State(t[2])
+        else:
+            self.stf = stf
+
+    def state_update(self,event,from_code=False):
+        if (from_code):
+            try:
+                event = code_to_event[event]
+            except:
+                print("Unknown event")
+                return False
+        try:
+            print("Current state: {0!s}".format(self.state))
+            print("Event: {0!s}".format(event))
+            self.state = self.stf[(self.state,event)]
+            print("New state: {0!s}".format(self.state))
+            return True
+        except:
+            print("Unknown transition")
+            return False
+    
 
 code_to_event = {
         714: Event('GAIN_UP'),
