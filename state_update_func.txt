@@ -1,4 +1,6 @@
-MAIN
-(MAIN,B1) -> MAIN_GRID
-(MAIN_GRID,B2) -> MAIN
-(MAIN,B3) -> MAIN_GRID
+MAIN.png
+(MAIN.png,B1) -> MAIN_GRID.png
+(MAIN_GRID.png,B2) -> MAIN.png
+(MAIN.png,B3) -> MAIN_GRID.png
+(MAIN.png,B4) -> VIDEO_TEST.mp4
+(VIDEO_TEST.mp4,B5) -> MAIN.png
