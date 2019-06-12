@@ -28,12 +28,14 @@ class MFD_App(Frame):
     def init_window(self):
         self.master.geometry("800x600")
         self.master.wm_attributes('-type','splash')
+        self.master.attributes('-fullscreen',True)
         self.pack(fill=BOTH, expand=1)
         
     def show_menu(self):
         if re.match("(\S+)."+img_extension , self.state_transition.state.name): 
             img = ImageTk.PhotoImage(Image.open(self.img_path.format(self.state_transition.state)))
             self.panel = Label(self, image=img)
+            self.panel.configure(background='black')
             self.panel.image = img
             self.panel.pack(fill = "both", expand = "yes")
             self.update_idletasks()
@@ -46,6 +48,7 @@ class MFD_App(Frame):
     def update_menu(self):
         if re.match("(\S+)."+img_extension , self.state_transition.state.name): 
             img2 = ImageTk.PhotoImage(Image.open(self.img_path.format(self.state_transition.state)))
+            self.panel.configure(background='black')
             self.panel.configure(image=img2)
             self.panel.image = img2
             self.update_idletasks()
@@ -53,6 +56,7 @@ class MFD_App(Frame):
             video = imageio.get_reader(self.img_path.format(self.state_transition.state))
             for frame in video.iter_data():
                 frame_img = ImageTk.PhotoImage(Image.fromarray(frame))
+                self.panel.configure(background='black')
                 self.panel.configure(image=frame_img)
                 self.panel.image = frame_img
                 self.update_idletasks()

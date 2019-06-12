@@ -1,6 +1,7 @@
 MAIN.png
-(MAIN.png,B1) -> MAIN_GRID.png
-(MAIN_GRID.png,B2) -> MAIN.png
-(MAIN.png,B3) -> MAIN_GRID.png
-(MAIN.png,B4) -> VIDEO_TEST.mp4
-(VIDEO_TEST.mp4,B5) -> MAIN.png
+(MAIN.png,B2) -> MAIN_GRID.png
+(MAIN_GRID.png,B1) -> MAIN.png
+(MAIN.png,B3) -> 60ANOS.png
+(60ANOS.png,B1) -> MAIN.png
+(MAIN.png,B4) -> ASTANA.mp4
+(ASTANA.mp4,B1) -> MAIN.png
