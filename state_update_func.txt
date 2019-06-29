@@ -1,7 +1,16 @@
-MAIN.png
-(MAIN.png,B2) -> MAIN_GRID.png
-(MAIN_GRID.png,B1) -> MAIN.png
-(MAIN.png,B3) -> 60ANOS.png
-(60ANOS.png,B1) -> MAIN.png
-(MAIN.png,B4) -> ASTANA.mp4
-(ASTANA.mp4,B1) -> MAIN.png
+HSD_0.png
+(HSD_0.png,B14) -> HSD_1.png
+(HSD_1.png,B14) -> HSD_2.png
+(HSD_2.png,B14) -> HSD_0.png
+(HSD_0.png,B12) -> TGP_1.png
+(HSD_1.png,B12) -> TGP_1.png
+(HSD_2.png,B12) -> TGP_1.png
+(TGP_1.png,B14) -> HSD_0.png
+(TGP_1.png,B12) -> ASTANA.mp4
+(ASTANA.mp4,B12) -> TGP_1.png
+(ASTANA.mp4,B14) -> HSD_0.png
+(HSD_0.png,B13) -> LEMP.png
+(HSD_1.png,B13) -> LEMP.png
+(HSD_2.png,B13) -> LEMP.png
+(LEMP.png,B14) -> HSD_0.png
+(LEMP.png,B12) -> TGP_1.png
